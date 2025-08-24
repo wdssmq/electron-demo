@@ -4,6 +4,17 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <HelloWorld msg="Vite + Vue" />
+  <hr>
+  <p>
+    <strong>Current route path:</strong> {{ $route.fullPath }}
+  </p>
+  <!-- <nav>
+    <RouterLink to="/">Go to Home</RouterLink>
+    <RouterLink to="/about">Go to About</RouterLink>
+  </nav> -->
+  <main>
+    <RouterView />
+  </main>
 </template>
 
 <style scoped>
@@ -18,5 +29,13 @@ import HelloWorld from './components/HelloWorld.vue'
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+nav a {
+  text-decoration: none;
+  color: #42b983;
 }
 </style>
