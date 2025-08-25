@@ -21,6 +21,8 @@ pnpm exec electron-forge import
 
 ### 使用 electron-vite
 
+本仓库中的 vite 版基于下边的脚手架创建，删除了图片素材并添加了 VSCode 的调试配置；
+
 ```bash
 pnpm create vite@latest electron-vite-demo2
 
