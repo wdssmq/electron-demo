@@ -1,4 +1,6 @@
 .history/
+dist-electron/
+dist/
 node_modules/
 out/
-dist-electron/
+release/
