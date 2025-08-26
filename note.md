@@ -10,6 +10,8 @@ pnpm approve-builds
 
 ### pnpm 执行 electron-forge import
 
+注：项目内的 forge 版已执行过该命令；
+
 ```bash
 pnpm install --save-dev @electron-forge/cli
 pnpm approve-builds
@@ -70,6 +72,40 @@ mkdir "$env:LOCALAPPDATA\electron-builder\Cache\nsis"
 > nsis-resources
 > 
 >  https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-resources-3.4.1/nsis-resources-3.4.1.7z
+
+### installer.nsh
+
+可为 electron-builder 提供安装和卸载时的事件处理；
+
+```json
+// electron-builder.json
+{
+  // ...
+  "nsis": {
+    // 已有选项…………
+    "include": "installer.nsh"
+  }
+}
+```
+
+```nsh
+; 安装后事件处理
+!macro customInstall
+  ; 创建 AppData\Roaming\electron-vite-demo 目录
+  CreateDirectory "$APPDATA\electron-vite-demo"
+  
+  ; 复制配置文件到用户目录，${PROJECT_DIR} 为项目根目录
+  SetOutPath "$APPDATA\electron-vite-demo"
+  File "${PROJECT_DIR}\path\config.yaml"
+!macroend
+
+; 卸载前事件处理
+!macro customUnInstall
+  ; 删除用户配置目录（可选）
+  ; RMDir /r "$APPDATA\ai-jumon"
+!macroend
+
+```
 
 ### 示例代码
 
