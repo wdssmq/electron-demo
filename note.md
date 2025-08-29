@@ -29,6 +29,7 @@ pnpm exec electron-forge import
 pnpm create vite@latest electron-vite-demo2
 
 cd electron-vite-demo2
+pnpm config set ELECTRON_MIRROR https://npmmirror.com/mirrors/electron/
 pnpm install
 pnpm approve-builds
 
