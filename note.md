@@ -6,6 +6,11 @@ rm -rf node_modules
 pnpm install
 pnpm approve-builds
 
+# Linux 下
+export ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/
+rm -rf node_modules/electron node_modules/.pnpm/electron@*
+pnpm install
+
 ```
 
 ### pnpm 执行 electron-forge import
