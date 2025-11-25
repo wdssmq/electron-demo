@@ -31,14 +31,17 @@ pnpm exec electron-forge import
 本仓库中的 vite 版基于下边的脚手架创建，删除了图片素材并添加了 VSCode 的调试配置；
 
 ```bash
-pnpm create vite@latest electron-vite-demo2
+pnpm create electron-vite electron-vite-project
 
-cd electron-vite-demo2
+cd electron-vite-project
 pnpm config set ELECTRON_MIRROR https://npmmirror.com/mirrors/electron/
 pnpm install
 pnpm approve-builds
 
 ```
+
+[electron-vite/create-electron-vite: Scaffolding Your Electron⚡️Vite Project](https://github.com/electron-vite/create-electron-vite "electron-vite/create-electron-vite: Scaffolding Your Electron⚡️Vite Project")
+
 
 ### 打包时无法下载的文件
 
